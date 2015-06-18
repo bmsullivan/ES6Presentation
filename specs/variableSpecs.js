@@ -1,8 +1,8 @@
 describe('Variable Specs', function() {
 
-    it('should use "let"', function() {
-        let foo = 'bar';
-        expect(foo).toBe('bar');
+    xit('should use "let"', function() {
+        for(let i = 0; i < 5; i++){}
+        expect(i).toBe(5);
     });
 
 });

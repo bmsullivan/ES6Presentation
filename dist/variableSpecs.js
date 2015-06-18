@@ -3,7 +3,7 @@
 describe('Variable Specs', function () {
 
     it('should use "let"', function () {
-        var foo = 'bar';
-        expect(foo).toBe('bar');
+        for (var _i = 0; _i < 5; _i++) {}
+        expect(i).toBe(5);
     });
 });
