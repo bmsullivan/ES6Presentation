@@ -8,7 +8,7 @@ gulp.task('scripts', function () {
 });
 
 gulp.task('watch', function () {
-    gulp.watch(['spec/**/*.js'], ['scripts']);
+    gulp.watch(['specs/**/*.js'], ['scripts']);
 });
 
 gulp.task('default', ['scripts', 'watch']);

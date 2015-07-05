@@ -26,7 +26,7 @@ gulp.task("scripts", function () {
 });
 
 gulp.task('watch', function () {
-    gulp.watch(['src/**/*.js', 'spec/**/*.js'], ['scripts']);
+    gulp.watch(['src/**/*.js', 'specs/**/*.js'], ['scripts']);
 });
 
 gulp.task('default', ['scripts', 'watch']);
