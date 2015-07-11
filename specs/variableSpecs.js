@@ -46,4 +46,13 @@ describe('Variable Specs', function() {
         expect(myFunc()).toBe('bar');
         expect(myFunc('baz')).toBe('baz');
     });
+
+    it('should use rest params', function () {
+        function myFunc(one, two, ...rest) {
+            expect(one).toBe(1);
+            expect(rest).toEqual([3,4,5]);
+        }
+
+        myFunc(1, 2, 3, 4, 5);
+    });
 });
