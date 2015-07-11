@@ -37,4 +37,13 @@ describe('Variable Specs', function() {
             expect(method).toBe('POST');
         }
     });
+
+    it('should allow default parameters', function () {
+        function myFunc(foo = 'bar') {
+            return foo;
+        }
+
+        expect(myFunc()).toBe('bar');
+        expect(myFunc('baz')).toBe('baz');
+    });
 });
