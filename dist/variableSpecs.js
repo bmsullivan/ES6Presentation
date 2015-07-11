@@ -77,4 +77,10 @@ describe('Variable Specs', function () {
         var myArray = [1, 2, 3];
         myFunc.apply(undefined, myArray);
     });
+
+    it('should use string interpolation', function () {
+        var name = 'Brian';
+        var message = 'Hello, ' + name;
+        expect(message).toBe('Hello, Brian');
+    });
 });

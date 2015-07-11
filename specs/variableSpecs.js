@@ -65,4 +65,10 @@ describe('Variable Specs', function() {
         let myArray = [1,2,3];
         myFunc(...myArray);
     });
+
+    it('should use string interpolation', function () {
+        let name = 'Brian';
+        let message = `Hello, ${name}`;
+        expect(message).toBe('Hello, Brian');
+    });
 });
