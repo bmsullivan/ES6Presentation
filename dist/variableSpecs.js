@@ -67,4 +67,14 @@ describe('Variable Specs', function () {
 
         myFunc(1, 2, 3, 4, 5);
     });
+
+    it('should use spread operator', function () {
+        function myFunc(one, two, three) {
+            expect(one).toBe(1);
+            expect(two).toBe(2);
+            expect(three).toBe(3);
+        }
+        var myArray = [1, 2, 3];
+        myFunc.apply(undefined, myArray);
+    });
 });
