@@ -3,3 +3,5 @@ export class Person {
         this.name = name;
     }
 }
+
+export let sayName = (person) => console.log(person.name);
