@@ -1,11 +1,10 @@
-import * as personModule from '../src/person';
+import Person from '../src/person';
 describe('Module specs', function() {
     it('should allow imported classes to be used', function() {
 
-        expect(personModule.Person).toBeDefined();
+        expect(Person).toBeDefined();
 
-        let p = new personModule.Person('Brian');
+        let p = new Person('Brian');
         expect(p.name).toBe('Brian');
-        personModule.sayName(p);
     });
 });

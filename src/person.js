@@ -1,7 +1,5 @@
-export class Person {
+export default class Person {
     constructor(name) {
         this.name = name;
     }
 }
-
-export let sayName = (person) => console.log(person.name);
