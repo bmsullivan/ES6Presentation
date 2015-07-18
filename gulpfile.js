@@ -1,14 +1,32 @@
 var gulp = require('gulp');
-var babel = require('gulp-babel');
+var browserify = require('browserify');
+var babelify = require('babelify');
+var source = require('vinyl-source-stream');
+var through = require('through2');
+var globby = require('globby');
 
-gulp.task('scripts', function () {
-    return gulp.src('specs/*.js')
-        .pipe(babel())
-        .pipe(gulp.dest('dist'));
+gulp.task("scripts", function () {
+    var bundledStream = through();
+
+    bundledStream
+        .pipe(source('output.js'))
+        .pipe(gulp.dest('./dist/'));
+
+    globby(['./specs/*.js'], function (err, entries) {
+        var b = browserify({
+            entries: entries,
+            debug: true,
+            transform: [babelify.configure()]
+        });
+
+        b.bundle().pipe(bundledStream);
+    });
+
+    return bundledStream;
 });
 
 gulp.task('watch', function () {
-    gulp.watch(['specs/**/*.js'], ['scripts']);
+    gulp.watch(['src/**/*.js', 'specs/**/*.js'], ['scripts']);
 });
 
 gulp.task('default', ['scripts', 'watch']);
