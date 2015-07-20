@@ -71,4 +71,13 @@ describe('Variable Specs', function() {
         let message = `Hello, ${name}`;
         expect(message).toBe('Hello, Brian');
     });
+
+    it('should iterate over items', function() {
+        let items = ['foo', 'bar', 'baz'];
+        let allItems = '';
+        for(let i of items) {
+            allItems+=i;
+        }
+        expect(allItems).toBe('foobarbaz');
+    });
 });
