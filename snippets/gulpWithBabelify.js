@@ -12,7 +12,7 @@ gulp.task("scripts", function () {
         .pipe(source('output.js'))
         .pipe(gulp.dest('./dist/'));
 
-    globby(['./spec/*.js'], function (err, entries) {
+    globby(['./specs/*.js'], function (err, entries) {
         var b = browserify({
             entries: entries,
             debug: true,
